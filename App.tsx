@@ -1,5 +1,5 @@
-import { StyleSheet, Text, View, ScrollView, Alert } from 'react-native';
-import react, { useState } from 'react';
+import { Text, View, ScrollView, Alert } from 'react-native';
+import React, { useState } from 'react';
 
 import Task from './components/Task/index';
 import Form from './components/Form';
@@ -20,11 +20,11 @@ export default function App() {
     Alert.alert('Thông báo!!!', 'Bạn có chắc muốn xóa task này không.', [
       {
         text: 'Có đâu',
-        onPress: () => {},
+        onPress: () => console.log(''),
         style: 'cancel',
       },
       {text: 'Đúng rồi đó', onPress: () => {
-          let taskListTmp = [...taskList];
+          const taskListTmp = [...taskList];
           taskListTmp.splice(index, 1);
           setTaskList(taskListTmp);
         }
